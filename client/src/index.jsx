@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import key from '../../omdb_api_key.js'
+import key from '../../omdb_api_key.js';
+import SearchResults from './components/searchresults.jsx';
+import RecommendedMovie from './components/recommendedmovie.jsx';
+var _ = require('lodash');
 
 
 class App extends React.Component {
@@ -12,6 +15,7 @@ class App extends React.Component {
       watchedList: [],
     }
     this.search = this.search.bind(this);
+    this.addToList = this.addToList.bind(this);
   }
 
   search() {
@@ -25,17 +29,34 @@ class App extends React.Component {
       }
     }
     var searchQuery = searchQueryArray.join("");
-    console.log(searchQuery);
     fetch(`http://www.omdbapi.com/?apikey=${key}&t=${searchQuery}`)
     .then(response => response.json())
-    .then(searchResults => console.log(searchResults));
+    .then(searchResults => this.setState({
+      searchResult: searchResults
+    }));
+  }
+
+  addToList() {
+    var moviesCopy = _.cloneDeep(this.state.recommendedList);
+    moviesCopy.push(this.state.searchResult);
+    console.log(moviesCopy);
+    this.setState({recommendedList: moviesCopy});
   }
 
   render() {
     return (
       <div>
+        <div>
         Search Movie <input id="search-input" type="text"></input>
         <input onClick={this.search} type="submit" value="Search"></input>
+        </div>
+        <div>
+        <SearchResults addToList={this.addToList} year={this.state.searchResult.Year} rated={this.state.searchResult.Rated} plot={this.state.searchResult.Plot} genre={this.state.searchResult.Genre} title={this.state.searchResult.Title} poster={this.state.searchResult.Poster}/>
+        </div>
+        <div className="recommended-movies">
+          List of Recommended Movies
+          {this.state.recommendedList.map(movie => <RecommendedMovie poster={movie.Poster} title={movie.Title} genre={movie.Genre} year={movie.Year} rated={movie.Rated}/>)}
+        </div>
       </div>
     )
   }

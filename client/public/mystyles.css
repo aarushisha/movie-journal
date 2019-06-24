@@ -1,0 +1,15 @@
+.poster {
+  height: 200px;
+  width: auto;
+  border: 0px;
+}
+
+.search-results {
+  float: right;
+  margin-right: 200px;
+  width: 400px;
+}
+
+.recommended-movies {
+  padding-top: 100px;
+}
