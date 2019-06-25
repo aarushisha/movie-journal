@@ -11,8 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchResult: {},
-      recommendedList: [],
-      watchedList: [],
+      movieList: [],
     }
     this.search = this.search.bind(this);
     this.addToList = this.addToList.bind(this);
@@ -40,7 +39,7 @@ class App extends React.Component {
   }
 
   addToList() {
-    var moviesCopy = _.cloneDeep(this.state.recommendedList);
+    var moviesCopy = _.cloneDeep(this.state.movieList);
     moviesCopy.push(this.state.searchResult);
     console.log(moviesCopy);
     // this.setState({recommendedList: moviesCopy});
@@ -51,15 +50,19 @@ class App extends React.Component {
       },
       body: JSON.stringify(this.state.searchResult)
     })
+    .then(console.log('added to list'))
+    location.reload();
   }
 
   componentDidMount() {
-    //getMovies()
+    this.getMovies();
 
   }
 
   getMovies() {
-   //get request for all movies and status
+   fetch('/getMovie')
+   .then(data => data.json())
+   .then(movies => this.setState({movieList: movies}))
   }
 
   deleteMovie() {
@@ -84,17 +87,18 @@ class App extends React.Component {
         <div className="added-movies-header">
           Added Movies
         </div>
-          <table>
+          <table className="movie-table">
             <tr className="recommended-movie">
               <th>Poster</th>
               <th>Title</th>
               <th>Year Released</th>
               <th>Genre</th>
               <th>Rated</th>
+              <th>Watched?</th>
               <th></th>
               <th></th>
            </tr>
-          {this.state.recommendedList.map(movie => <RecommendedMovie deleteMovie={this.deleteMovie}rotten={movie.Ratings[1].Value} actors={movie.Actors} poster={movie.Poster} title={movie.Title} genre={movie.Genre} year={movie.Year} rated={movie.Rated}/>)}
+          {this.state.movieList.map(movie => <RecommendedMovie id={movie.id} deleteMovie={this.deleteMovie} poster={movie.poster} title={movie.title} genre={movie.genre} year={movie.year} rated={movie.Rated} watched={movie.watched}/>)}
           </table>
         </div>
       </div>

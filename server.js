@@ -4,6 +4,7 @@ const port = 3002;
 const connection = require('./db/index.js');
 const models = require('./db/models.js');
 const addMovieDB = models.addMovieDB;
+const getMovieDB = models.getMovieDB;
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.post('/addMovie', (req, res) => {
   movie.genre = req.body.Genre;
   movie.rated = req.body.Rated;
   movie.watched = false;
+  console.log(movie);
   addMovieDB(movie, (err, results) => {
     if (err) {
       console.log(err)
@@ -26,7 +28,17 @@ app.post('/addMovie', (req, res) => {
       res.send(results);
     }
   });
-})
+});
+
+app.get('/getMovie', (req, res) => {
+  getMovieDB((err, results) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(results);
+    }
+  });
+});
 
 
 app.listen(port, function() {

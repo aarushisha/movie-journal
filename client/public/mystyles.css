@@ -5,9 +5,14 @@
 }
 
 .search-results {
+  float: left;
+  width: 40%;
+}
+
+.added-movies {
   float: right;
-  margin-right: 300px;
-  width: 400px;
+  margin-right: 100px;
+  width: 60%;
 }
 
 .added-movies {
