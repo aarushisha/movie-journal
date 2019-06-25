@@ -32,13 +32,13 @@ Once the project moves into development, the press release can be used as a touc
   > Movie Journal lets you create a list of all the movies you've been dying to watch! As you go through the blockbusters on your list, you can sit in the movie critic's seat and leave a rating and a post about your thoughts to share with the community! 
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "We want each user to make the best of their movie watching experience.  By being able to keep a 'wish-list' of movies, you can stop spending hours searching for the right movie for right now! After, you can tell us how you liked the movie!" - Aarushi Sharma
 
 ## How to Get Started ##
   > Just log in and start searching for movies that you'd like to add to your list! 
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "Finally! I way to keep track of all the movies I want to watch and movies I've watched before! I love being able to look back and see which movies I've watched and how I've enjoyed, or hated, them!" - Robert De Niro. 
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Check it out at localhost:3002!
