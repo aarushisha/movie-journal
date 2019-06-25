@@ -17,25 +17,25 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > Movie Journal
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > For people who love movies and are looking for a venue to document their experiences with movies.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Gone are the days of scrolling endlessly through Netflix - use Movie Journal to keep track of the movies you want to watch! Once you've watched the movie, you can give it a rating and write a post about how you enjoyed it! You're the movie critic now!
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > In the days of Netflix, Hulu, Amazon Prime - we are inundated with movie options leaving us with decision paralysis so instead of sitting down and being able to put on a movie, we spend hours looking through long lists of what each service has to offer.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > Movie Journal lets you create a list of all the movies you've been dying to watch! As you go through the blockbusters on your list, you can sit in the movie critic's seat and leave a rating and a post about your thoughts to share with the community! 
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Just log in and start searching for movies that you'd like to add to your list! 
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
