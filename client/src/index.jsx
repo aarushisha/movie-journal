@@ -16,6 +16,7 @@ class App extends React.Component {
     }
     this.search = this.search.bind(this);
     this.addToList = this.addToList.bind(this);
+    this.getMovies = this.getMovies.bind(this);
   }
 
   search() {
@@ -40,7 +41,23 @@ class App extends React.Component {
     var moviesCopy = _.cloneDeep(this.state.recommendedList);
     moviesCopy.push(this.state.searchResult);
     console.log(moviesCopy);
-    this.setState({recommendedList: moviesCopy});
+    // this.setState({recommendedList: moviesCopy});
+    fetch('/addMovie', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.state.searchResult)
+    })
+  }
+
+  componentDidMount() {
+    //getMovies()
+
+  }
+
+  getMovies() {
+   //get request for all movies and status
   }
 
   render() {
@@ -51,11 +68,11 @@ class App extends React.Component {
         <input onClick={this.search} type="submit" value="Search"></input>
         </div>
         <div>
-        <SearchResults addToList={this.addToList} year={this.state.searchResult.Year} rated={this.state.searchResult.Rated} plot={this.state.searchResult.Plot} genre={this.state.searchResult.Genre} title={this.state.searchResult.Title} poster={this.state.searchResult.Poster}/>
+        <SearchResults addToList={this.addToList} rotten={this.state.searchResult.Ratings} actors={this.state.searchResult.Actors} year={this.state.searchResult.Year} rated={this.state.searchResult.Rated} plot={this.state.searchResult.Plot} genre={this.state.searchResult.Genre} title={this.state.searchResult.Title} poster={this.state.searchResult.Poster}/>
         </div>
         <div className="recommended-movies">
           List of Recommended Movies
-          {this.state.recommendedList.map(movie => <RecommendedMovie poster={movie.Poster} title={movie.Title} genre={movie.Genre} year={movie.Year} rated={movie.Rated}/>)}
+          {this.state.recommendedList.map(movie => <RecommendedMovie rotten={movie.Ratings[1].Value} actors={movie.Actors} poster={movie.Poster} title={movie.Title} genre={movie.Genre} year={movie.Year} rated={movie.Rated}/>)}
         </div>
       </div>
     )

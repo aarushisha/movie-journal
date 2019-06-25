@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+//maybe change this into a table 
 const RecommendedMovie = (props) => {
   return (
     <div className="recommended-movie">

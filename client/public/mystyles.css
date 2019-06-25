@@ -6,10 +6,18 @@
 
 .search-results {
   float: right;
-  margin-right: 200px;
+  margin-right: 300px;
   width: 400px;
 }
 
 .recommended-movies {
   padding-top: 100px;
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
+}
+
+button {
+  font-family: 'Roboto Slab', serif;
 }
