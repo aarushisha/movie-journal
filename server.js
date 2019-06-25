@@ -20,6 +20,7 @@ app.post('/addMovie', (req, res) => {
   movie.year = req.body.Year;
   movie.genre = req.body.Genre;
   movie.rated = req.body.Rated;
+  movie.poster = req.body.Poster;
   movie.watched = false;
   console.log(movie);
   addMovieDB(movie, (err, results) => {
