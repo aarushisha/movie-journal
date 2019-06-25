@@ -3,13 +3,16 @@ import React from 'react';
 //maybe change this into a table 
 const RecommendedMovie = (props) => {
   return (
-    <div className="recommended-movie">
-      <img className="poster" src={props.poster}></img>
-      <p>{props.title}</p>
-      <p>{props.year}</p>
-      <p>{props.genre}</p>
-      <p>{props.rated}</p>
-      <button type="button">Watched</button>
+    <div>
+    <tr className="recommended-movie">
+      <td><img className="poster" src={props.poster}></img></td>
+      <td>{props.title}</td>
+      <td>{props.year}</td>
+      <td>{props.genre}</td>
+      <td>{props.rated}</td>
+      <td><button type="button">Watched</button></td>
+      <td><button type="button">Delete</button></td>
+    </tr>
     </div>
   )
 
