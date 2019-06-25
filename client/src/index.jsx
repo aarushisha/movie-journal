@@ -84,15 +84,15 @@ class App extends React.Component {
     return (
       <div>
         <div>
-        Search Movie <input id="search-input" type="text"></input>
-        <input onClick={this.search} type="submit" value="Search"></input>
+        <input id="search-input" type="text"></input>
+        <button type="button" onClick={this.search}>Search</button>
         </div>
         <div>
         <SearchResults error={this.state.searchResult.Error} addToList={this.addToList} rotten={this.state.searchResult.Ratings} actors={this.state.searchResult.Actors} year={this.state.searchResult.Year} rated={this.state.searchResult.Rated} plot={this.state.searchResult.Plot} genre={this.state.searchResult.Genre} title={this.state.searchResult.Title} poster={this.state.searchResult.Poster}/>
         </div>
         <div className="added-movies">
         <div className="added-movies-header">
-          Added Movies
+          Your Movie List
         </div>
           <table className="movie-table">
             <tr className="recommended-movie">
