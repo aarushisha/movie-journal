@@ -105,7 +105,7 @@ class App extends React.Component {
               <th></th>
               <th></th>
            </tr>
-          {this.state.movieList.map(movie => <RecommendedMovie id={movie.id} deleteMovie={this.deleteMovie} poster={movie.poster} title={movie.title} genre={movie.genre} year={movie.year} rated={movie.Rated} watched={movie.watched}/>)}
+          {this.state.movieList.map(movie => <RecommendedMovie id={movie.id} deleteMovie={this.deleteMovie} poster={movie.poster} title={movie.title} genre={movie.genre} year={movie.year} rated={movie.rated} watched={movie.watched}/>)}
           </table>
         </div>
       </div>

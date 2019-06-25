@@ -4,6 +4,11 @@
   border: 0px;
 }
 
+#list-poster {
+  height: 100px;
+  width: auto;
+}
+
 .search-results {
   float: left;
   width: 40%;
@@ -12,7 +17,7 @@
 .added-movies {
   float: right;
   margin-right: 100px;
-  width: 60%;
+  width: 40%;
 }
 
 .added-movies {

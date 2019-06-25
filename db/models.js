@@ -5,7 +5,7 @@ module.exports.addMovieDB = (movie, callback) => {
 }
 
 module.exports.getMovieDB = (callback) => {
-  connection.query(`SELECT id, title, year, genre, rated, watched FROM movies`, callback);
+  connection.query(`SELECT id, title, poster, year, genre, rated, watched FROM movies`, callback);
 }
 
 module.exports.deleteMovieDB = (id, callback) => {

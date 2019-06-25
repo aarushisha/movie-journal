@@ -4,12 +4,12 @@ import React from 'react';
 const RecommendedMovie = (props) => {
   return (
     <tr className="recommended-movie" key={props.id}>
-      <td>{props.poster}</td>
+      <td><img id="list-poster" src={props.poster}></img></td>
       <td>{props.title}</td>
       <td>{props.year}</td>
       <td>{props.genre}</td>
       <td>{props.rated}</td>
-      <td>{props.watched}</td>
+      <td>{props.watched === 0 ? 'NO': 'YES'}</td>
       <td><button type="button">Watched</button></td>
       <td><button id={props.id} type="button" onClick={props.deleteMovie}>Delete</button></td>
     </tr>
