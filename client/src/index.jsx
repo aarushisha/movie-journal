@@ -81,8 +81,19 @@ class App extends React.Component {
         <SearchResults addToList={this.addToList} rotten={this.state.searchResult.Ratings} actors={this.state.searchResult.Actors} year={this.state.searchResult.Year} rated={this.state.searchResult.Rated} plot={this.state.searchResult.Plot} genre={this.state.searchResult.Genre} title={this.state.searchResult.Title} poster={this.state.searchResult.Poster}/>
         </div>
         <div className="added-movies">
+        <div className="added-movies-header">
           Added Movies
+        </div>
           <table>
+            <tr className="recommended-movie">
+              <th>Poster</th>
+              <th>Title</th>
+              <th>Year Released</th>
+              <th>Genre</th>
+              <th>Rated</th>
+              <th></th>
+              <th></th>
+           </tr>
           {this.state.recommendedList.map(movie => <RecommendedMovie deleteMovie={this.deleteMovie}rotten={movie.Ratings[1].Value} actors={movie.Actors} poster={movie.Poster} title={movie.Title} genre={movie.Genre} year={movie.Year} rated={movie.Rated}/>)}
           </table>
         </div>
