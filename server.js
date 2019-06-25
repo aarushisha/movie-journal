@@ -5,6 +5,7 @@ const connection = require('./db/index.js');
 const models = require('./db/models.js');
 const addMovieDB = models.addMovieDB;
 const getMovieDB = models.getMovieDB;
+const deleteMovieDB = models.deleteMovieDB;
 
 const app = express();
 
@@ -32,6 +33,17 @@ app.post('/addMovie', (req, res) => {
 
 app.get('/getMovie', (req, res) => {
   getMovieDB((err, results) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(results);
+    }
+  });
+});
+
+app.post('/deleteMovie', (req, res) => {
+  var id = req.body.id;
+  deleteMovieDB(id, (err, results) => {
     if (err) {
       console.log(err);
     } else {

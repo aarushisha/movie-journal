@@ -50,7 +50,6 @@ class App extends React.Component {
       },
       body: JSON.stringify(this.state.searchResult)
     })
-    .then(console.log('added to list'))
     location.reload();
   }
 
@@ -66,7 +65,15 @@ class App extends React.Component {
   }
 
   deleteMovie() {
-
+    var id = parseInt(event.target.id);
+    fetch('/deleteMovie', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({id: id})
+    })
+    location.reload();
   }
 
   watchMovie() {
