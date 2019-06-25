@@ -17,6 +17,8 @@ class App extends React.Component {
     this.search = this.search.bind(this);
     this.addToList = this.addToList.bind(this);
     this.getMovies = this.getMovies.bind(this);
+    this.deleteMovie = this.deleteMovie.bind(this);
+    this.watchMovie = this.watchMovie.bind(this);
   }
 
   search() {
@@ -60,6 +62,14 @@ class App extends React.Component {
    //get request for all movies and status
   }
 
+  deleteMovie() {
+
+  }
+
+  watchMovie() {
+
+  }
+
   render() {
     return (
       <div>
@@ -72,7 +82,7 @@ class App extends React.Component {
         </div>
         <div className="recommended-movies">
           List of Recommended Movies
-          {this.state.recommendedList.map(movie => <RecommendedMovie rotten={movie.Ratings[1].Value} actors={movie.Actors} poster={movie.Poster} title={movie.Title} genre={movie.Genre} year={movie.Year} rated={movie.Rated}/>)}
+          {this.state.recommendedList.map(movie => <RecommendedMovie deleteMovie={this.deleteMovie}rotten={movie.Ratings[1].Value} actors={movie.Actors} poster={movie.Poster} title={movie.Title} genre={movie.Genre} year={movie.Year} rated={movie.Rated}/>)}
         </div>
       </div>
     )
