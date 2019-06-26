@@ -114,7 +114,6 @@ class App extends React.Component {
     var filteredGenre = document.getElementById("input-genre").value;
     var uppercaseFilteredGenre = filteredGenre.toUpperCase();
     var table = document.getElementById('movie-table');
-    var table = document.getElementById('movie-table');
     var tr = table.getElementsByTagName('tr');
     for (var i = 2; i < tr.length; i++) {
       var td = tr[i].getElementsByTagName('td')[3];
@@ -131,12 +130,18 @@ class App extends React.Component {
   }
 
   filterRated () {
-    console.log(document.getElementById('mpaa-rating').value);
+    var ratingFilter = document.getElementById('mpaa-rating').value;
+    console.log(ratingFilter);
+    var table = document.getElementById('movie-table');
+    var tr = table.getElementsByTagName('tr');
     
   }
 
   filterWatched () {
-    //drop down
+    var ratingWatch = document.getElementById('watched-yes-no').value;
+    console.log(ratingWatch);
+    var table = document.getElementById('movie-table');
+    var tr = table.getElementsByTagName('tr');
         
   }
 
@@ -179,10 +184,10 @@ class App extends React.Component {
                   <option value="NC-17">NC-17</option>
                   <option value="N/A">N/A</option>
               </select></td>
-              <td><select id="watched-yes-no">
+              <td><select onChange={this.filterWatched} id="watched-yes-no">
                   <option value="all">?</option>
-                  <option value="1">Yes</option>
-                  <option value="0">No</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
               </select></td>
               <td></td>
               <td></td>
