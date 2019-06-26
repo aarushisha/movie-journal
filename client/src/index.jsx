@@ -170,8 +170,20 @@ class App extends React.Component {
               <td><input onKeyUp={this.filterTitle} type="text" id="input-title" placeholder="Filter for title"></input></td>
               <td></td>
               <td><input onKeyUp={this.filterGenre} type="text" id="input-genre" placeholder="Filter for genre"></input></td>
-              {/* <td><input onKeyUp={this.filterRated} type="text" id="input-rated" placeholder="Filter for rating"></input></td>
-              <td><input type="text" id="input-watched" placeholder="Filter for watch status"></input></td> */}
+              <td><select id="mpaa-rating">
+                  <option value="all">?</option>
+                  <option value="G">G</option>
+                  <option value="PG">PG</option>
+                  <option value="PG-13">PG-13</option>
+                  <option value="R">R</option>
+                  <option value="NC-17">NC-17</option>
+                  <option value="N/A">N/A</option>
+              </select></td>
+              <td><select id="watched-yes-no">
+                  <option value="all">?</option>
+                  <option value="1">Yes</option>
+                  <option value="0">No</option>
+              </select></td>
               <td></td>
               <td></td>
            </tr>
