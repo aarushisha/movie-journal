@@ -11,3 +11,8 @@ module.exports.getMovieDB = (callback) => {
 module.exports.deleteMovieDB = (id, callback) => {
   connection.query(`DELETE FROM movies WHERE id=${id}`, callback);
 }
+
+module.exports.watchMovieDB = (id, callback) => {
+  connection.query(`UPDATE movies SET watched = true WHERE id=${id}`, callback)
+
+}

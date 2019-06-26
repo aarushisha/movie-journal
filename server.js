@@ -6,6 +6,7 @@ const models = require('./db/models.js');
 const addMovieDB = models.addMovieDB;
 const getMovieDB = models.getMovieDB;
 const deleteMovieDB = models.deleteMovieDB;
+const watchMovieDB = models.watchMovieDB;
 
 const app = express();
 
@@ -52,6 +53,19 @@ app.post('/deleteMovie', (req, res) => {
     }
   });
 });
+
+app.put('/watchMovie', (req, res) => {
+  var id = req.body.id;
+  watchMovieDB(id, (err, results) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(results);
+    }
+  })
+})
+
+
 
 
 app.listen(port, function() {

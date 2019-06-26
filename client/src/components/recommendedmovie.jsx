@@ -10,7 +10,7 @@ const RecommendedMovie = (props) => {
       <td>{props.genre}</td>
       <td>{props.rated}</td>
       <td>{props.watched === 0 ? 'NO': 'YES'}</td>
-      <td><button type="button">Watched</button></td>
+      <td><button id={props.id} onClick={props.watchMovie} type="button">Watched</button></td>
       <td><button id={props.id} type="button" onClick={props.deleteMovie}>Delete</button></td>
     </tr>
   )

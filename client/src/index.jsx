@@ -77,6 +77,16 @@ class App extends React.Component {
   }
 
   watchMovie() {
+    var id = parseInt(event.target.id);
+    console.log(id);
+    fetch('/watchMovie', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({id: id})
+    })
+    location.reload();
 
   }
 
@@ -84,7 +94,7 @@ class App extends React.Component {
     return (
       <div>
         <div>
-        <input id="search-input" type="text"></input>
+        <input id="search-input" type="text" size="50"></input>
         <button type="button" onClick={this.search}>Search</button>
         </div>
         <div>
@@ -105,7 +115,7 @@ class App extends React.Component {
               <th></th>
               <th></th>
            </tr>
-          {this.state.movieList.map(movie => <RecommendedMovie id={movie.id} deleteMovie={this.deleteMovie} poster={movie.poster} title={movie.title} genre={movie.genre} year={movie.year} rated={movie.rated} watched={movie.watched}/>)}
+          {this.state.movieList.map(movie => <RecommendedMovie watchMovie={this.watchMovie} id={movie.id} deleteMovie={this.deleteMovie} poster={movie.poster} title={movie.title} genre={movie.genre} year={movie.year} rated={movie.rated} watched={movie.watched}/>)}
           </table>
         </div>
       </div>
