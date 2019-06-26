@@ -20,8 +20,7 @@ class App extends React.Component {
     this.watchMovie = this.watchMovie.bind(this);
     this.filterTitle = this.filterTitle.bind(this);
     this.filterGenre = this.filterGenre.bind(this);
-    this.filterYear = this.filterYear.bind(this);
-    this.filterRater = this.filterRated.bind(this);
+    this.filterRated = this.filterRated.bind(this);
   }
 
   search() {
@@ -111,15 +110,23 @@ class App extends React.Component {
     }
   }
 
-  filterYear () {
-    var filteredYear = document.getElementById("input-year").value;
-    var table = document.getElementById('movie-table');
-    
-  }
-
   filterGenre () {
     var filteredGenre = document.getElementById("input-genre").value;
+    var uppercaseFilteredGenre = filteredGenre.toUpperCase();
     var table = document.getElementById('movie-table');
+    var table = document.getElementById('movie-table');
+    var tr = table.getElementsByTagName('tr');
+    for (var i = 2; i < tr.length; i++) {
+      var td = tr[i].getElementsByTagName('td')[3];
+      if (td) {
+        var value = td.textContent || td.innerText;
+        if (value.toUpperCase().indexOf(uppercaseFilteredGenre) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
     
   }
 
@@ -161,7 +168,7 @@ class App extends React.Component {
            <tr className="recommended-movie">
               <td></td>
               <td><input onKeyUp={this.filterTitle} type="text" id="input-title" placeholder="Filter for title"></input></td>
-              <td><input onKeyUp={this.filterYear} type="text" id="input-year" placeholder="Filter for year"></input></td>
+              <td></td>
               <td><input onKeyUp={this.filterGenre} type="text" id="input-genre" placeholder="Filter for genre"></input></td>
               {/* <td><input onKeyUp={this.filterRated} type="text" id="input-rated" placeholder="Filter for rating"></input></td>
               <td><input type="text" id="input-watched" placeholder="Filter for watch status"></input></td> */}
