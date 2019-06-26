@@ -131,7 +131,7 @@ class App extends React.Component {
   }
 
   filterRated () {
-//drop down
+    console.log(document.getElementById('mpaa-rating').value);
     
   }
 
@@ -170,7 +170,7 @@ class App extends React.Component {
               <td><input onKeyUp={this.filterTitle} type="text" id="input-title" placeholder="Filter for title"></input></td>
               <td></td>
               <td><input onKeyUp={this.filterGenre} type="text" id="input-genre" placeholder="Filter for genre"></input></td>
-              <td><select id="mpaa-rating">
+              <td><select onChange={this.filterRated} id="mpaa-rating">
                   <option value="all">?</option>
                   <option value="G">G</option>
                   <option value="PG">PG</option>
