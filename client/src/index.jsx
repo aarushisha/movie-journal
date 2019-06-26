@@ -18,6 +18,10 @@ class App extends React.Component {
     this.getMovies = this.getMovies.bind(this);
     this.deleteMovie = this.deleteMovie.bind(this);
     this.watchMovie = this.watchMovie.bind(this);
+    this.filterTitle = this.filterTitle.bind(this);
+    this.filterGenre = this.filterGenre.bind(this);
+    this.filterYear = this.filterYear.bind(this);
+    this.filterRater = this.filterRated.bind(this);
   }
 
   search() {
@@ -87,7 +91,46 @@ class App extends React.Component {
       body: JSON.stringify({id: id})
     })
     location.reload();
+  }
 
+  filterTitle () {
+    var filteredTitle = document.getElementById("input-title").value;
+    var uppercaseFilteredTitle = filteredTitle.toUpperCase();
+    var table = document.getElementById('movie-table');
+    var tr = table.getElementsByTagName('tr');
+    for (var i = 2; i < tr.length; i++) {
+      var td = tr[i].getElementsByTagName('td')[1];
+      if (td) {
+        var value = td.textContent || td.innerText;
+        if (value.toUpperCase().indexOf(uppercaseFilteredTitle) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+
+  filterYear () {
+    var filteredYear = document.getElementById("input-year").value;
+    var table = document.getElementById('movie-table');
+    
+  }
+
+  filterGenre () {
+    var filteredGenre = document.getElementById("input-genre").value;
+    var table = document.getElementById('movie-table');
+    
+  }
+
+  filterRated () {
+//drop down
+    
+  }
+
+  filterWatched () {
+    //drop down
+        
   }
 
   render() {
@@ -104,7 +147,7 @@ class App extends React.Component {
         <div className="added-movies-header">
           Your Movie List
         </div>
-          <table className="movie-table">
+          <table id="movie-table">
             <tr className="recommended-movie">
               <th>Poster</th>
               <th>Title</th>
@@ -114,6 +157,16 @@ class App extends React.Component {
               <th>Watched?</th>
               <th></th>
               <th></th>
+           </tr>
+           <tr className="recommended-movie">
+              <td></td>
+              <td><input onKeyUp={this.filterTitle} type="text" id="input-title" placeholder="Filter for title"></input></td>
+              <td><input onKeyUp={this.filterYear} type="text" id="input-year" placeholder="Filter for year"></input></td>
+              <td><input onKeyUp={this.filterGenre} type="text" id="input-genre" placeholder="Filter for genre"></input></td>
+              {/* <td><input onKeyUp={this.filterRated} type="text" id="input-rated" placeholder="Filter for rating"></input></td>
+              <td><input type="text" id="input-watched" placeholder="Filter for watch status"></input></td> */}
+              <td></td>
+              <td></td>
            </tr>
           {this.state.movieList.map(movie => <RecommendedMovie watchMovie={this.watchMovie} id={movie.id} deleteMovie={this.deleteMovie} poster={movie.poster} title={movie.title} genre={movie.genre} year={movie.year} rated={movie.rated} watched={movie.watched}/>)}
           </table>
