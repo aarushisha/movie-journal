@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Movie Journal
+  > Watch List
 
 ## Sub-Heading ##
-  > For people who love movies and are looking for a venue to document their experiences with movies.
+  > For people who love tv and movies and are looking for a venue to document their experiences with entertainment.
 
 ## Summary ##
-  > Gone are the days of scrolling endlessly through Netflix - use Movie Journal to keep track of the movies you want to watch! Once you've watched the movie, you can give it a rating and write a post about how you enjoyed it! You're the movie critic now!
+  > Gone are the days of scrolling endlessly through Netflix - use Watch List to keep track of the movies and tv shows you want to watch! 
 
 ## Problem ##
-  > In the days of Netflix, Hulu, Amazon Prime - we are inundated with movie options leaving us with decision paralysis so instead of sitting down and being able to put on a movie, we spend hours looking through long lists of what each service has to offer.
+  > In the days of Netflix, Hulu, Amazon Prime - we are inundated with entertainment options leaving us with decision paralysis so instead of sitting down and being able to put on a movie or show, we spend hours looking through long lists of what each service has to offer.
 
 ## Solution ##
-  > Movie Journal lets you create a list of all the movies you've been dying to watch! As you go through the blockbusters on your list, you can sit in the movie critic's seat and leave a rating and a post about your thoughts to share with the community! 
+  > Watch List lets you create a list of all the movies and shows you've been dying to watch! 
 
 ## Quote from You ##
-  > "We want each user to make the best of their movie watching experience.  By being able to keep a 'wish-list' of movies, you can stop spending hours searching for the right movie for right now! After, you can tell us how you liked the movie!" - Aarushi Sharma
+  > "We want each user to make the best of their movie and tv watching experiences.  By being able to keep a 'wish-list' of movies and shows, you can stop spending hours searching for the right movie for right now!" - Aarushi Sharma
 
 ## How to Get Started ##
-  > Just log in and start searching for movies that you'd like to add to your list! 
+  > Just log in and start searching for movies or shows that you'd like to add to your list! If you're feeling lucky - click the "Random!" button to have Watch List suggest something for you!
 
 ## Customer Quote ##
-  > "Finally! I way to keep track of all the movies I want to watch and movies I've watched before! I love being able to look back and see which movies I've watched and how I've enjoyed, or hated, them!" - Robert De Niro. 
+  > "Finally! I way to keep track of all the movies and shows I want to watch!" - Robert De Niro. 
 
 ## Closing and Call to Action ##
   > Check it out at localhost:3002!

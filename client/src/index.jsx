@@ -44,7 +44,7 @@ class App extends React.Component {
 
   randomMovie() {
     //get random number between 1 and 2099999
-    var randomNumber = Math.floor((Math.random() * 99999) + 1);
+    var randomNumber = Math.floor((Math.random() * 999999) + 1);
     var randomNumberToString = randomNumber.toString();
     if (randomNumberToString.length < 7) {
       randomNumberToString = "0" + randomNumberToString;
@@ -200,7 +200,7 @@ class App extends React.Component {
         <div className="added-movies">
           <table id="movie-table">
             <tr className="recommended-movie">
-              <th>Poster</th>
+              <th></th>
               <th>Title</th>
               <th>Year Released</th>
               <th>Genre</th>
@@ -224,6 +224,13 @@ class App extends React.Component {
                   <option value="R">R</option>
                   <option value="NC-17">NC-17</option>
                   <option value="N/A">N/A</option>
+                  <option value="Not Rated">Not Rated</option>
+                  <option value="TV-Y">TV-Y</option>
+                  <option value="TV-Y7">TV-Y7</option>
+                  <option value="TV-G">TV-G</option>
+                  <option value="TV-PG">TV-PG</option>
+                  <option value="TV-14">TV-14</option>
+                  <option value="TV-MA">TV-MA</option>
               </select></td>
               <td><select onChange={this.filterWatched} id="watched-yes-no">
                   <option value="all">?</option>
