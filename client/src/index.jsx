@@ -26,6 +26,7 @@ class App extends React.Component {
   }
 
   search() {
+    var year = document.getElementById("year-input").value;
     var movie = document.getElementById("search-input").value;
     var searchQueryArray = [];
     for (var i = 0; i < movie.length; i++) {
@@ -36,7 +37,13 @@ class App extends React.Component {
       }
     }
     var searchQuery = searchQueryArray.join("");
-    fetch(`http://www.omdbapi.com/?apikey=${key}&t=${searchQuery}`)
+    var fetchQuery = "";
+    if (year === "") {
+      fetchQuery = `http://www.omdbapi.com/?apikey=${key}&t=${searchQuery}`;
+    } else {
+      fetchQuery = `http://www.omdbapi.com/?apikey=${key}&t=${searchQuery}&y=${year}`
+    }
+    fetch(fetchQuery)
     .then(response => response.json())
     .then(searchResults => this.setState({
       searchResult: searchResults
@@ -62,7 +69,6 @@ class App extends React.Component {
     var moviesCopy = _.cloneDeep(this.state.movieList);
     moviesCopy.push(this.state.searchResult);
     console.log(moviesCopy);
-    // this.setState({recommendedList: moviesCopy});
     fetch('/addMovie', {
       method: 'POST',
       headers: {
@@ -214,7 +220,8 @@ class App extends React.Component {
     return (
       <div>
         <div>
-        <input id="search-input" type="text" size="50"></input>
+        <p>Title</p><input id="search-input" type="text" size="30"></input>
+        <p>Year (optional)</p><input id="year-input" type="text" size="5"></input>
         <button type="button" onClick={this.search}>Search</button>
         <button type="button" onClick={this.randomMovie}>Random!</button>
         </div>
