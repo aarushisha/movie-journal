@@ -12,6 +12,8 @@ const RecommendedMovie = (props) => {
       <td id="movie-watched">{props.watched === 0 ? 'NO': 'YES'}</td>
       <td><button id={props.id} onClick={props.watchMovie} type="button">Watched</button></td>
       <td><button id={props.id} type="button" onClick={props.deleteMovie}>Delete</button></td>
+      <td>{props.created}</td>
+      <td>{props.updated}</td>
     </tr>
   )
 

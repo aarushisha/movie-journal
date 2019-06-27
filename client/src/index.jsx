@@ -181,9 +181,6 @@ class App extends React.Component {
         <SearchResults error={this.state.searchResult.Error} addToList={this.addToList} rotten={this.state.searchResult.Ratings} actors={this.state.searchResult.Actors} year={this.state.searchResult.Year} rated={this.state.searchResult.Rated} plot={this.state.searchResult.Plot} genre={this.state.searchResult.Genre} title={this.state.searchResult.Title} poster={this.state.searchResult.Poster}/>
         </div>
         <div className="added-movies">
-        <div className="added-movies-header">
-          Your Movie List
-        </div>
           <table id="movie-table">
             <tr className="recommended-movie">
               <th>Poster</th>
@@ -219,7 +216,7 @@ class App extends React.Component {
               <td></td>
               <td></td>
            </tr>
-          {this.state.movieList.map(movie => <RecommendedMovie watchMovie={this.watchMovie} id={movie.id} deleteMovie={this.deleteMovie} poster={movie.poster} title={movie.title} genre={movie.genre} year={movie.year} rated={movie.rated} watched={movie.watched}/>)}
+          {this.state.movieList.map(movie => <RecommendedMovie created={movie.created} updated={movie.updated} watchMovie={this.watchMovie} id={movie.id} deleteMovie={this.deleteMovie} poster={movie.poster} title={movie.title} genre={movie.genre} year={movie.year} rated={movie.rated} watched={movie.watched}/>)}
           </table>
         </div>
       </div>
