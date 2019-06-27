@@ -148,12 +148,14 @@ class App extends React.Component {
 
   filterRated () {
     var ratingFilter = document.getElementById('mpaa-rating').value;
+    console.log(ratingFilter)
     var table = document.getElementById('movie-table');
     var tr = table.getElementsByTagName('tr');
     for (var i = 2; i < tr.length; i++) {
-      var td = tr[i].getElementsByTagName('td')[4];
+      var td = tr[i].getElementsByTagName('td')[5];
       if (td) {
         var value = td.textContent || td.innerText;
+        console.log(value);
         if (value === ratingFilter) {
           tr[i].style.display = "";
         } else if (ratingFilter === "all") {
@@ -172,7 +174,7 @@ class App extends React.Component {
     var table = document.getElementById('movie-table');
     var tr = table.getElementsByTagName('tr');
     for (var i = 2; i < tr.length; i++) {
-      var td = tr[i].getElementsByTagName("td")[5];
+      var td = tr[i].getElementsByTagName("td")[6];
       if (td) {
         var value = td.textContent || td.InnerText;
         console.log(value);
@@ -188,6 +190,7 @@ class App extends React.Component {
   }
 
   filterType () {
+    var type = document.getElementById("type-filter").value;
 
   }
 
@@ -245,8 +248,8 @@ class App extends React.Component {
               </select></td>
               <td><select onChange={this.filterWatched} id="watched-yes-no">
                   <option value="all">?</option>
-                  <option value="YES">Yes</option>
-                  <option value="NO">No</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
               </select></td>
               <td></td>
               <td></td>

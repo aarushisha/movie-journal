@@ -11,7 +11,7 @@ const RecommendedMovie = (props) => {
       <td>{props.genre}</td>
       <td>{props.type}</td>
       <td id="movie-rated">{props.rated}</td>
-      <td id="movie-watched">{props.watched === 0 ? 'NO': 'YES'}</td>
+      <td id="movie-watched">{props.watched === 0 ? 'No': 'Yes'}</td>
       <td>{(moment.tz(props.created,"America/Los_Angeles")).format().slice(0,10)}</td>
       <td>{props.updated ? (moment.tz(props.updated,"America/Los_Angeles")).format().slice(0,10): ""}</td>
       <td><button id={props.id} onClick={props.watchMovie} type="button">Watched</button></td>
