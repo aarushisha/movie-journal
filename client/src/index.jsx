@@ -134,6 +134,20 @@ class App extends React.Component {
     console.log(ratingFilter);
     var table = document.getElementById('movie-table');
     var tr = table.getElementsByTagName('tr');
+    for (var i = 2; i < tr.length; i++) {
+      var td = tr[i].getElementsByTagName('td')[4];
+      if (td) {
+        var value = td.textContent || td.innerText;
+        console.log(value);
+        if (value === ratingFilter) {
+          tr[i].style.display = "";
+        } else if (ratingFilter === "all") {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
     
   }
 
