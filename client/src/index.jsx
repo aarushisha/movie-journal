@@ -191,6 +191,22 @@ class App extends React.Component {
 
   filterType () {
     var type = document.getElementById("type-filter").value;
+    var table = document.getElementById('movie-table');
+    var tr = table.getElementsByTagName('tr');
+    for (var i = 2; i < tr.length; i++) {
+      var td = tr[i].getElementsByTagName("td")[4];
+      if (td) {
+        var value = td.textContent || td.InnerText;
+        console.log(value);
+        if (value === type) {
+          tr[i].style.display = "";
+        } else if (type === "all") {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }  
 
   }
 
