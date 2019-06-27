@@ -194,6 +194,8 @@ class App extends React.Component {
               <th>Watched?</th>
               <th></th>
               <th></th>
+              <th>Date Added</th>
+              <th>Date Watched</th>
            </tr>
            <tr className="recommended-movie">
               <td></td>
