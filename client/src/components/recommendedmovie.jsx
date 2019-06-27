@@ -12,8 +12,8 @@ const RecommendedMovie = (props) => {
       <td>{props.type}</td>
       <td id="movie-rated">{props.rated}</td>
       <td id="movie-watched">{props.watched === 0 ? 'No': 'Yes'}</td>
-      <td>{(moment.tz(props.created,"America/Los_Angeles")).format().slice(0,10)}</td>
-      <td>{props.updated ? (moment.tz(props.updated,"America/Los_Angeles")).format().slice(0,10): ""}</td>
+      <td className="date-created">{(moment.tz(props.created,"America/Los_Angeles")).format().slice(0,10)}</td>
+      <td className="date-watched">{props.updated ? (moment.tz(props.updated,"America/Los_Angeles")).format().slice(0,10): ""}</td>
       <td><button id={props.id} onClick={props.watchMovie} type="button">Watched</button></td>
       <td><button id={props.id} type="button" onClick={props.deleteMovie}>Delete</button></td>
     </tr>

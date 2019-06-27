@@ -55,3 +55,7 @@ button {
 #search-click {
   font-family: 'Roboto Slab', serif;
 }
+
+.date-created, .date-watched {
+  font-size: 7px;
+}
