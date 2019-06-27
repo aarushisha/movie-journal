@@ -13,8 +13,8 @@ const RecommendedMovie = (props) => {
       <td id="movie-watched">{props.watched === 0 ? 'NO': 'YES'}</td>
       <td><button id={props.id} onClick={props.watchMovie} type="button">Watched</button></td>
       <td><button id={props.id} type="button" onClick={props.deleteMovie}>Delete</button></td>
-      <td>{(moment.tz(props.created,"America/Los_Angeles")).format()}</td>
-      <td>{props.updated ? (moment.tz(props.updated,"America/Los_Angeles")).format(): ""}</td>
+      <td>{(moment.tz(props.created,"America/Los_Angeles")).format().slice(0,10)}</td>
+      <td>{props.updated ? (moment.tz(props.updated,"America/Los_Angeles")).format().slice(0,10): ""}</td>
     </tr>
   )
 
