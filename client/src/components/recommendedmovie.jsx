@@ -5,7 +5,7 @@ var moment = require('moment-timezone');
 const RecommendedMovie = (props) => {
   return (
     <tr className="recommended-movie" key={props.id}>
-      <td><img id="list-poster" src={props.poster}></img></td>
+      <td>{props.poster !== "N/A" ? <img id="list-poster"  src={props.poster}></img> : ""}</td>
       <td>{props.title}</td>
       <td>{props.year}</td>
       <td>{props.genre}</td>

@@ -30,7 +30,7 @@ connection.query('USE movies', function(err, results) {
   }
 });
 
-connection.query('CREATE TABLE IF NOT EXISTS movies (id int NOT NULL AUTO_INCREMENT PRIMARY KEY, title VARCHAR(100), poster VARCHAR(500), year INT, genre VARCHAR(100), rated VARCHAR(20), watched BOOLEAN NOT NULL, created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, updated DATETIME, userRating INT, userThoughts LONGTEXT)', function(err, results) {
+connection.query('CREATE TABLE IF NOT EXISTS movies (id int NOT NULL AUTO_INCREMENT PRIMARY KEY, title VARCHAR(100), poster VARCHAR(500), year VARCHAR(20), genre VARCHAR(100), rated VARCHAR(20), watched BOOLEAN NOT NULL, created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, updated DATETIME, userRating INT, userThoughts LONGTEXT)', function(err, results) {
   if (err) {
     console.log(err)
   } else {

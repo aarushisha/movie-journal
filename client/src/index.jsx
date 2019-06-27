@@ -202,7 +202,7 @@ class App extends React.Component {
             <tr className="recommended-movie">
               <th></th>
               <th>Title</th>
-              <th>Year Released</th>
+              <th>Year(s)</th>
               <th>Genre</th>
               <th>Rated</th>
               <th>Watched?</th>

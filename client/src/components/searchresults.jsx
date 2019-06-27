@@ -8,7 +8,7 @@ const SearchResults = (props) => {
         {props.error ? <div>{props.error}</div> : ""}
       </div>  
       <div>
-        {props.poster ? <img className="poster" src={props.poster}></img> : ""}
+        {props.poster !== "N/A" ? <img className="poster" src={props.poster}></img> : ""}
       </div>      
       <div>{props.title}</div>
       <div>
