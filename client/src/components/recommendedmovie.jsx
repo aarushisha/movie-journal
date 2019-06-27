@@ -1,4 +1,5 @@
 import React from 'react';
+var moment = require('moment-timezone');
 
 //maybe change this into a table 
 const RecommendedMovie = (props) => {
@@ -12,8 +13,8 @@ const RecommendedMovie = (props) => {
       <td id="movie-watched">{props.watched === 0 ? 'NO': 'YES'}</td>
       <td><button id={props.id} onClick={props.watchMovie} type="button">Watched</button></td>
       <td><button id={props.id} type="button" onClick={props.deleteMovie}>Delete</button></td>
-      <td>{props.created}</td>
-      <td>{props.updated}</td>
+      <td>{(moment.tz(props.created,"America/Los_Angeles")).format()}</td>
+      <td>{props.updated ? (moment.tz(props.updated,"America/Los_Angeles")).format(): ""}</td>
     </tr>
   )
 
