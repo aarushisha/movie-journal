@@ -21,6 +21,7 @@ class App extends React.Component {
     this.filterTitle = this.filterTitle.bind(this);
     this.filterGenre = this.filterGenre.bind(this);
     this.filterRated = this.filterRated.bind(this);
+    this.randomMovie = this.randomMovie.bind(this);
   }
 
   search() {
@@ -38,6 +39,21 @@ class App extends React.Component {
     .then(response => response.json())
     .then(searchResults => this.setState({
       searchResult: searchResults
+    }));
+  }
+
+  randomMovie() {
+    //get random number between 1 and 2099999
+    var randomNumber = Math.floor((Math.random() * 99999) + 1);
+    var randomNumberToString = randomNumber.toString();
+    if (randomNumberToString.length < 7) {
+      randomNumberToString = "0" + randomNumberToString;
+    }
+    var imdbID = "tt0" + randomNumberToString;
+    fetch(`http://www.omdbapi.com/?apikey=${key}&i=${imdbID}`)
+    .then(response => response.json())
+    .then(randomResults => this.setState({
+      searchResult : randomResults
     }));
   }
 
@@ -176,6 +192,7 @@ class App extends React.Component {
         <div>
         <input id="search-input" type="text" size="50"></input>
         <button type="button" onClick={this.search}>Search</button>
+        <button type="button" onClick={this.randomMovie}>Random!</button>
         </div>
         <div>
         <SearchResults error={this.state.searchResult.Error} addToList={this.addToList} rotten={this.state.searchResult.Ratings} actors={this.state.searchResult.Actors} year={this.state.searchResult.Year} rated={this.state.searchResult.Rated} plot={this.state.searchResult.Plot} genre={this.state.searchResult.Genre} title={this.state.searchResult.Title} poster={this.state.searchResult.Poster}/>
@@ -189,10 +206,10 @@ class App extends React.Component {
               <th>Genre</th>
               <th>Rated</th>
               <th>Watched?</th>
-              <th></th>
-              <th></th>
               <th>Date Added</th>
               <th>Date Watched</th>
+              <th></th>
+              <th></th>         
            </tr>
            <tr className="recommended-movie">
               <td></td>
