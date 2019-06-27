@@ -131,14 +131,12 @@ class App extends React.Component {
 
   filterRated () {
     var ratingFilter = document.getElementById('mpaa-rating').value;
-    console.log(ratingFilter);
     var table = document.getElementById('movie-table');
     var tr = table.getElementsByTagName('tr');
     for (var i = 2; i < tr.length; i++) {
       var td = tr[i].getElementsByTagName('td')[4];
       if (td) {
         var value = td.textContent || td.innerText;
-        console.log(value);
         if (value === ratingFilter) {
           tr[i].style.display = "";
         } else if (ratingFilter === "all") {
@@ -156,7 +154,20 @@ class App extends React.Component {
     console.log(ratingWatch);
     var table = document.getElementById('movie-table');
     var tr = table.getElementsByTagName('tr');
-        
+    for (var i = 2; i < tr.length; i++) {
+      var td = tr[i].getElementsByTagName("td")[5];
+      if (td) {
+        var value = td.textContent || td.InnerText;
+        console.log(value);
+        if (value === ratingWatch) {
+          tr[i].style.display = "";
+        } else if (ratingWatch === "all") {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }   
   }
 
   render() {
