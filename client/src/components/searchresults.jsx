@@ -17,6 +17,9 @@ const SearchResults = (props) => {
       <div>
         {props.genre ? <div>Genre: {props.genre}</div> : ""}
       </div>  
+      <div>
+        {props.type ? <div>Type: {props.type}</div> : ""}
+      </div>  
       <div>{props.plot}</div>
       <div>
         {props.actors ? <div>Starring: {props.actors}</div> : ""}

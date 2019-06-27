@@ -33,10 +33,14 @@ input[type="text"]
 
 .movie-table {
   font-size: 12px;
+  text-align: center;
 }
-
+td {
+  text-align: center;
+}
 body {
   font-family: 'Roboto Slab', serif;
+  font-size: 12px;
   /* background-color: gray; */
 }
 

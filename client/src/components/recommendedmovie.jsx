@@ -9,6 +9,7 @@ const RecommendedMovie = (props) => {
       <td>{props.title}</td>
       <td>{props.year}</td>
       <td>{props.genre}</td>
+      <td>{props.type}</td>
       <td id="movie-rated">{props.rated}</td>
       <td id="movie-watched">{props.watched === 0 ? 'NO': 'YES'}</td>
       <td>{(moment.tz(props.created,"America/Los_Angeles")).format().slice(0,10)}</td>

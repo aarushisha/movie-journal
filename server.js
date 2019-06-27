@@ -22,6 +22,7 @@ app.post('/addMovie', (req, res) => {
   movie.genre = req.body.Genre;
   movie.rated = req.body.Rated;
   movie.poster = req.body.Poster;
+  movie.type = req.body.Type;
   movie.watched = false;
   console.log(movie);
   addMovieDB(movie, (err, results) => {

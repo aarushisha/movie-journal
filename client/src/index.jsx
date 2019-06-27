@@ -22,6 +22,7 @@ class App extends React.Component {
     this.filterGenre = this.filterGenre.bind(this);
     this.filterRated = this.filterRated.bind(this);
     this.randomMovie = this.randomMovie.bind(this);
+    this.filterType = this.filterType.bind(this);
   }
 
   search() {
@@ -186,6 +187,10 @@ class App extends React.Component {
     }   
   }
 
+  filterType () {
+
+  }
+
   render() {
     return (
       <div>
@@ -195,7 +200,7 @@ class App extends React.Component {
         <button type="button" onClick={this.randomMovie}>Random!</button>
         </div>
         <div>
-        <SearchResults error={this.state.searchResult.Error} addToList={this.addToList} rotten={this.state.searchResult.Ratings} actors={this.state.searchResult.Actors} year={this.state.searchResult.Year} rated={this.state.searchResult.Rated} plot={this.state.searchResult.Plot} genre={this.state.searchResult.Genre} title={this.state.searchResult.Title} poster={this.state.searchResult.Poster}/>
+        <SearchResults type={this.state.searchResult.Type} error={this.state.searchResult.Error} addToList={this.addToList} rotten={this.state.searchResult.Ratings} actors={this.state.searchResult.Actors} year={this.state.searchResult.Year} rated={this.state.searchResult.Rated} plot={this.state.searchResult.Plot} genre={this.state.searchResult.Genre} title={this.state.searchResult.Title} poster={this.state.searchResult.Poster}/>
         </div>
         <div className="added-movies">
           <table id="movie-table">
@@ -204,6 +209,7 @@ class App extends React.Component {
               <th>Title</th>
               <th>Year(s)</th>
               <th>Genre</th>
+              <th>Type</th>
               <th>Rated</th>
               <th>Watched?</th>
               <th>Date Added</th>
@@ -216,6 +222,11 @@ class App extends React.Component {
               <td><input onKeyUp={this.filterTitle} type="text" id="input-title" placeholder="Filter for title"></input></td>
               <td></td>
               <td><input onKeyUp={this.filterGenre} type="text" id="input-genre" placeholder="Filter for genre"></input></td>
+              <td><select onChange={this.filterType} id="type-filter">
+                  <option value="all">?</option>
+                  <option value="movie">Movie</option>
+                  <option value="series">Series</option>
+              </select></td>
               <td><select onChange={this.filterRated} id="mpaa-rating">
                   <option value="all">?</option>
                   <option value="G">G</option>
@@ -240,7 +251,7 @@ class App extends React.Component {
               <td></td>
               <td></td>
            </tr>
-          {this.state.movieList.map(movie => <RecommendedMovie created={movie.created} updated={movie.updated} watchMovie={this.watchMovie} id={movie.id} deleteMovie={this.deleteMovie} poster={movie.poster} title={movie.title} genre={movie.genre} year={movie.year} rated={movie.rated} watched={movie.watched}/>)}
+          {this.state.movieList.map(movie => <RecommendedMovie type={movie.type} created={movie.created} updated={movie.updated} watchMovie={this.watchMovie} id={movie.id} deleteMovie={this.deleteMovie} poster={movie.poster} title={movie.title} genre={movie.genre} year={movie.year} rated={movie.rated} watched={movie.watched}/>)}
           </table>
         </div>
       </div>
